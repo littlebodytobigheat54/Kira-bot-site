@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kira Bot</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script>
+tailwind.config = {
+    darkMode: 'class',
+}
+</script>
+
+<style>
+/* sombra bonita no texto */
+.text-shadow {
+    text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+</style>
+</head>
+
+<body class="bg-gradient-to-br from-[#FFF0EC] to-[#ECF0FF] dark:from-[#0f172a] dark:to-[#020617] text-gray-800 dark:text-white min-h-screen">
+
+<!-- HEADER -->
+<header class="bg-white/80 dark:bg-black/60 backdrop-blur p-4 flex justify-between items-center">
+<h1 class="font-bold text-xl text-[#D17058]">Kira Bot</h1>
+
+<button id="darkToggle" class="text-xl">
+<i class="fa fa-moon-o"></i>
+</button>
+</header>
+
+<!-- HERO COM BANNER -->
+<section class="relative w-full h-[500px] md:h-[600px] overflow-hidden">
+
+<img src="banner.png" class="absolute w-full h-full object-cover">
+
+<div class="absolute inset-0 bg-black/40"></div>
+
+<div class="relative z-10 h-full flex items-center justify-center px-6">
+
+<div class="max-w-3xl text-center text-white">
+
+<h1 class="text-4xl md:text-5xl font-bold mb-4 text-shadow">
+Kira Bot
+</h1>
+
+<p class="text-lg md:text-xl mb-6 text-shadow">
+O Kira-Bot é um bot de WhatsApp baseado no Nazuna Bot, criado por Hiudy e distribuído gratuitamente.
+Ele possui diversos comandos, incluindo funções de administração, brincadeiras, RPG e muito mais.
+</p>
+
+<div class="flex justify-center gap-4 flex-wrap">
+
+<a href="https://wa.me/17097013754"
+class="bg-[#D17058] hover:scale-105 transition text-white px-6 py-3 rounded-full shadow-lg">
+<i class="fa fa-whatsapp"></i> WhatsApp
+</a>
+
+<a href="https://github.com/hiudyy/nazu"
+target="_blank"
+class="bg-white text-black hover:scale-105 transition px-6 py-3 rounded-full shadow-lg">
+<i class="fa fa-github"></i> GitHub
+</a>
+
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- RECURSOS -->
+<section class="p-6">
+<h2 class="text-2xl font-bold text-center mb-6">Recursos</h2>
+
+<div class="grid gap-6 md:grid-cols-2">
+
+<div class="bg-white/70 dark:bg-[#1f1f1f] p-5 rounded-xl shadow">
+<i class="fa fa-cogs text-[#D17058] text-2xl mb-2"></i>
+<h3 class="font-bold">Administração</h3>
+<p>Ferramentas completas para gerenciar grupos de forma prática e eficiente.</p>
+</div>
+
+<div class="bg-white/70 dark:bg-[#1f1f1f] p-5 rounded-xl shadow">
+<i class="fa fa-gamepad text-blue-400 text-2xl mb-2"></i>
+<h3 class="font-bold">Jogos e Diversão</h3>
+<p>Diversos jogos e brincadeiras para você se divertir com amigos.</p>
+</div>
+
+<div class="bg-white/70 dark:bg-[#1f1f1f] p-5 rounded-xl shadow">
+<i class="fa fa-shield text-[#D17058] text-2xl mb-2"></i>
+<h3 class="font-bold">Sistema de RPG</h3>
+<p>Um sistema completo de RPG direto no WhatsApp.</p>
+</div>
+
+<div class="bg-white/70 dark:bg-[#1f1f1f] p-5 rounded-xl shadow">
+<i class="fa fa-smile-o text-pink-400 text-2xl mb-2"></i>
+<h3 class="font-bold">Figurinas</h3>
+<p>Crie e compartilhe stickers personalizados.</p>
+</div>
+
+</div>
+</section>
+
+<!-- CINNAMOROLL EXTRA -->
+<section class="flex justify-center p-6">
+<img 
+src="final.jpg"
+class="w-40 hover:scale-110 transition"
+>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center p-6 text-sm opacity-70">
+Baseado no Nazuna Bot • Kira Bot © 2025
+</footer>
+
+<!-- DARK MODE -->
+<script>
+const toggle = document.getElementById('darkToggle');
+
+if(localStorage.getItem('darkMode') === 'true'){
+document.documentElement.classList.add('dark');
+}
+
+toggle.onclick = () => {
+document.documentElement.classList.toggle('dark');
+const isDark = document.documentElement.classList.contains('dark');
+localStorage.setItem('darkMode', isDark);
+
+toggle.innerHTML = isDark 
+? '<i class="fa fa-sun-o"></i>' 
+: '<i class="fa fa-moon-o"></i>';
+};
+</script>
+
+</body>
+</html>
